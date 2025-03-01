@@ -1,0 +1,40 @@
+<html>
+	<header>
+	<header>
+	<body>
+	<h1>
+		Me recomende um mangá
+	<h1>
+	<div>
+		<img id="banner" width=300>
+		<p id="description"></p>
+	</div>
+	<script>
+		var data = "batata"
+		var api = "https://api.nekosia.cat/api/v1/images/catgirl"
+		var obras = [
+			{"Mahou shoujo ni akogarete.webp": "Um anime muito bom com humor e aventura cheio de lesbianismo"},
+			{"K-on.jpg": "Uma excelente demonstração de como o colegio pode ser melho se tiver musica"},
+			{"Usagi drop.jpg": "Focada em amor paterno de um homem que adotou uma criança"},
+			{"kill la kill.jpg": "Não sabo"}
+			]
+		var sorteado = obras[Math.floor(Math.random() * obras.length)]
+		var capa = document.createElement("img");
+		document.getElementById("banner").src = Object.keys(sorteado)[0]
+		<!-- capa.src = Object.keys(sorteado)[0]; -->
+		<!-- document.body.appendChild(capa); -->
+		
+		document.getElementById("description").textContent = sorteado[Object.keys(sorteado)[0]]
+		
+        console.log(api)
+		if ((new URLSearchParams(window.location.search)).get('config') == "batata") {
+			console.log("Configuração ativada")
+		}
+		if ((new URLSearchParams(window.location.search)).get('waifu') == "baiser") {
+			var text = document.createElement("h1");
+			text.textContent = "Éla é uma safada mas é gente boa <3";
+			document.body.appendChild(text);
+		}
+	</script>
+	</body>
+</html>
